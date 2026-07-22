@@ -2,13 +2,17 @@
 using namespace std;
 
 int main(){
-    int n;
+    char ch='A';
+    int n,mid;
     cout<<"Enter the no of rows:";
     cin>>n;
+    mid=n/2
     for(int i=1;i<=n;i++){
-        for(int j=1;j<=n-i+1;j++){
-            cout<<j;
+        mi
+        for(int j=n;j>i;j--){
+            cout<<" ";
         }
-        cout<<endl;
+
     }
+
 }
