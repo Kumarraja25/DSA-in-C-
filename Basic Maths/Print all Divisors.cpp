@@ -34,12 +34,31 @@ void factors3(int num){
     }
     sort(lf.begin(),lf.end());
     for(auto it : lf)cout<<it<<" ";
+    cout<<endl;
+}
+//more optimize with ordered
+void factors4(int num){
+    vector<int> lf;            // list of factors  
+    for(int i=1;i*i<num;i++){
+        if(num%i==0){
+            lf.push_back(i);
+            if(num/i!=i){
+                lf.emplace_back(num/i);
+            }
+            
+        }
+    }
+    sort(lf.begin(),lf.end());
+    for(auto it : lf)cout<<it<<" ";
+    cout<<endl;
 }
 
 int main(){
     int n;
     cout<<"Enter the no: ";
     cin>>n;
-    // factors(n);
-    factors3(n);
+    // factors1(n);
+    // factors1(n);
+    // factors3(n);
+    factors4(n);
 }
