@@ -12,7 +12,7 @@ void Prime(int num){
                 count++;
         }
     }
-    if(count==2){
+    if(count==2){ 
         cout<<num<<" is a prime number"<<endl;
     }
     else{
