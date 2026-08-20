@@ -2,17 +2,19 @@
 using namespace std;
 
 int main(){
-    int n;
-    cout<<"Enter the input array size: ";
-    cin>>n;
-    char arr[n];
-    for(int i=0;i<n;i++){
-        cin>>arr[i];
-    }
-    
+    // int n;
+    // cout<<"Enter the input array size: ";
+    // cin>>n;
+    // char arr[n];
+    // for(int i=0;i<n;i++){
+    //     cin>>arr[i];
+    // }
+    string s;
+    cout<<"Enter the string : ";
+    cin>>s;
     int hash[26]={0};
-    for(int i=0;i<n;i++){
-        hash[arr[i]-97]++;
+    for(int i=0;i<s.size();i++){
+        hash[s[i]-97]++;
     }
     
     int num;
