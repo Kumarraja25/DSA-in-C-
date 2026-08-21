@@ -1,11 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void sSort(int *a,int size){
+void sSort(int a[],int size){
     for(int i=0;i<size-1;i++){
         int min=i;
         for(int j=i+1;j<size;j++){
-            if(a[j]<a[min]5){
+            if(a[j]<a[min]){
                min=j;
             }
         }
