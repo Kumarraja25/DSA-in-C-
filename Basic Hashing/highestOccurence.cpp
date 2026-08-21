@@ -20,6 +20,6 @@ int main(){
         if(it.second>large_val) large_key=it.first;
         cout<<it.first<<"->"<<it.second<<endl;
     }
-    cout<<"Most occuring key is: "<<large_key;
+    cout<<"Most occuring key is: "<<large_key<<endl;
     return 0;
 }
