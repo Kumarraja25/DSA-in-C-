@@ -19,5 +19,5 @@ int main(){
         cin>>num;
         v.push_back(num);
     }
-    cout<<"Largest element: "<<largest(v,n);
+    cout<<"Largest element : "<<largest(v,n);
 }
