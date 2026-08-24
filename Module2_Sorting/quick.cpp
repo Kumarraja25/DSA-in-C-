@@ -7,8 +7,8 @@ int partition(vector<int> &a,int start,int end){
     int j=end;
     int pivot=a[start];
     while(i<j){
-        while(a[i]<=pivot) i++;
-        while(a[j]>pivot) j--;
+        while(a[i]<=pivot && i<=end) i++;
+        while(a[j]>pivot && j>=start) j--;
         if(i<j){
             swap(a[i],a[j]);
         }
