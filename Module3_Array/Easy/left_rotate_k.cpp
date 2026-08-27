@@ -2,6 +2,7 @@
 using namespace std;
 
 void rotate_left_brute(vector<int> &a,int size,int d){
+    d=d%size;
     vector<int> temp;
     for(int i=0;i<d;i++){
         temp.push_back(a[i]);
@@ -23,6 +24,7 @@ void reverse(vector<int> &a, int start,int end){
 }
 
 void rotate_left(vector<int> &a,int size,int d){
+    d=d%size;
     reverse(a,0,d);
     reverse(a,d,size);
     reverse(a,0,size);
