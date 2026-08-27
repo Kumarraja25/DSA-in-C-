@@ -2,6 +2,18 @@
 using namespace std;
 
 void remove_duplicate(vector<int> &a, int size){
+    int i=0;
+    for(int j=1;j<size;j++){
+        if(a[j]!=a[i]){
+            a[i+1]=a[j];
+            i++;
+        }
+    }
+    for(int k=0;k<=i;k++){
+        cout<<a[k]<<" ";
+    }
+}
+void remove_duplicate_brute(vector<int> &a, int size){
     set<int> s;
     for(auto it:a){
         s.insert(it);
