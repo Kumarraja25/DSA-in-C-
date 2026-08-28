@@ -2,23 +2,28 @@
 using namespace std;
 
 void moveZero_Brute(vector<int> &a,int size){
-    int index=0;
+    vector <int> b;
     for(int i=0;i<size;i++){
         if(a[i]!=0){
-            a[index]=a[i];
-            index++;
+            b.push_back(a[i]);
         }
     }
-    
-    for(int i=index;i<size;i++){
+    for(int i=0;i<b.size();i++){
+        a[i]=b[i];
+    }
+    for(int i=b.size();i<size;i++){
         a[i]=0;
     }
     
 }
 void moveZero(vector<int> &a,int size){
-    int i=0;
-    int j=1 
-    
+    int j=0;
+    for(int i=0;i<size;i++){
+        if(a[i]!=0){
+            swap(a[i],a[j]);
+            j++;
+        }
+    }
 }
 
 int main(){
