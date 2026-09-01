@@ -26,7 +26,7 @@ void unionSorted(int arr1[],int n1, int arr2[],int n2){
             }
             i++;
         }
-        else{
+        else{ 
             if(unionArray.size()==0 || arr2[j]!=unionArray.back()){
                 unionArray.push_back(arr2[j]);
             }
