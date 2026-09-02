@@ -42,6 +42,7 @@ int subarray_sum_Positive(vector<int> &a, int k){
 
 int main(){
     vector<int> v={1,2,3,1,1,1,1,3,3};
-    cout<<"Length of longest subarray: "<<subarray_sum_Positive(v,6);
+    cout<<"Length of longest subarray: ";
+    cout<<subarray_sum_Positive(v,6);
     return 0;
 }
