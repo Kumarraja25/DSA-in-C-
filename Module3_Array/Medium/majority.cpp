@@ -16,7 +16,7 @@ int majorityBrute(vector<int> &a){
     return -1;
         
 }
-int majority(vector<int> &a){
+int majorityBetter(vector<int> &a){
     map<int,int> mpp;
     for(int i=0;i<a.size();i++){
         mpp[a[i]]++;
@@ -26,6 +26,28 @@ int majority(vector<int> &a){
     }
     return -1;
         
+}
+
+//moore voting algo
+int majority(vector<int> &a){
+    int element;
+    int count=0;
+    for(int i=0;i<a.size();i++){
+        if(count==0){
+            element=a[i];
+            count++;
+        }
+        else if(element==a[i]) count++;
+        else count--;
+    }
+    int countEle=0;
+    for(int i=0;i<a.size();i++){
+        if(a[i]==element) countEle++;
+    }
+    if(countEle>a.size()/2){
+        return element;
+    }
+    return -1;
 }
 
 int main(){
