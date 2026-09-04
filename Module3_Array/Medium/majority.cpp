@@ -2,7 +2,7 @@
 using namespace std;
 
 
-int majority(vector<int> &a){
+int majorityBrute(vector<int> &a){
     for(int i=0;i<a.size();i++){
         int count=0;
         for(int j=0;j<a.size();j++){
@@ -12,6 +12,17 @@ int majority(vector<int> &a){
             return a[i];
         }
 
+    }
+    return -1;
+        
+}
+int majority(vector<int> &a){
+    map<int,int> mpp;
+    for(int i=0;i<a.size();i++){
+        mpp[a[i]]++;
+    }
+    for(auto it:mpp){
+        if(it.second>a.size()/2) return it.first;
     }
     return -1;
         
