@@ -39,7 +39,7 @@ int majority(vector<int> &a){
         }
         else if(element==a[i]) count++;
         else count--;
-    }
+    }AC
     int countEle=0;
     for(int i=0;i<a.size();i++){
         if(a[i]==element) countEle++;
