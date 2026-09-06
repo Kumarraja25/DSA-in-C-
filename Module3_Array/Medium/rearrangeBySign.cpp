@@ -18,7 +18,7 @@ vector<int> rearrange(vector<int> &a){
     
 }
 vector<int> rearrange1(vector<int> &a){
-    int j=0;
+    int j=0; 
     int k=1;
     vector<int> ans(a.size(),0);
     for(int i=0;i<a.size();i++){

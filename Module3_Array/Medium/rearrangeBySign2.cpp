@@ -27,7 +27,7 @@ vector<int> rearrange(vector<int> &a){
             a[2*i+1]=neg[i];
         }
         int index=2*pos.size();
-        for(int i=neg.size();i<pos.size();i++){
+        for(int i=pos.size();i<neg.size();i++){
             a[index]=neg[i];
             index++;
         }
