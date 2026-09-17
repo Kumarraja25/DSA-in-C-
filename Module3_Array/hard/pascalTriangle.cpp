@@ -18,40 +18,58 @@ void pascalsTriangleRow1(int r){
         cout<<nCr(r-1,i-1)<<" ";
     }
 }
-void pascalsTriangleRow(int r){
-    int ans=1;
-    cout<<ans<<" ";
+vector<int> pascalsTriangleRow(int r){
+    long long ans=1;
+    vector<int> ansRow;
+    ansRow.push_back(1);
     for(int i=1;i<r;i++){
         ans*=(r-i);
         ans/=i;
-        cout<<ans<<" ";
+        ansRow.push_back(ans);
     }
+    return ansRow;
 }
-vector<vector<int>> pascalsTriangle(int r,int c){
+vector<vector<int>> pascalsTriangle1(int r,int c){
     vector<vector<int>> ans;
     for(int i=1;i<=r;i++){
         vector<int> temp;
         for(int j=1;j<=c;j++){
-            cout<<nCr(r-1,c-1)<<" ";
+            temp.push_back(nCr(r-1,c-1));
         }
-        cout<<"\n";
+        ans.push_back(temp);
     }
+    return ans;
+}
+vector<vector<int>> pascalsTriangle(int r){
+    vector<vector<int>> res;
+    for(int i=i;i<=r;i++ ){
+        res.push_back(pascalsTriangleRow(i));
+    }
+    return res;
 }
 
 int main(){
     int row,col;
-    // cout<<"Enter the position of element you want\n"<<"Row: ";
-    // cin>>row;
-    // cout<<"Column: ";
-    // cin>>col;
-    // pascalsTriangleElement(row,col);
-    cout<<"\ntell the row to print: ";
+    // cout<<"Enter the position of element you want\n";
+    cout<<"Row: ";
     cin>>row;
-    pascalsTriangleRow(row);
+    cout<<"Column: ";
+    cin>>col;
+    // pascalsTriangleElement(row,col);
+    // cout<<"\ntell the row to print: ";
+    // cin>>row;
+    // pascalsTriangleRow(row);
     // cout<<"Enter details for triangle\n"<<"Row: ";
     // cin>>row;
     // cout<<"Column: ";
     // cin>>col;
     // pascalsTriangle(row,col);
-
+    vector<vector<int>> ans=pascalsTriangle(row);
+    for(auto it:ans){
+        for(auto it2: it){
+            cout<<it2<<" ";
+        }
+        cout<<"\n";
+    }
+    
 }
