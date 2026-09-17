@@ -53,8 +53,6 @@ int main(){
     for(int i=0;i<r*c;i++){
         cout<<result[i]<<" ";
         if((i+1)%c==0) cout<<"\n";
-
     }
-    
     return 0;
 }
