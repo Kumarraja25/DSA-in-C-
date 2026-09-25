@@ -30,7 +30,7 @@ vector<vector<int>> _4Sum2(vector<int> &a,int target){
         for(int j=i+1;j<n;j++){
             set<int> hashset;
             for(int k=j+1;k<n;k++){
-                int four=target-(a[i]+a[j]+a[k]);
+                int four=target-(a[i]+a[j]+a[k]); 
                 if(hashset.find(four)!=hashset.end()){
                     vector<int> temp={a[i],a[j],a[k],four};
                     sort(temp.begin(),temp.end());

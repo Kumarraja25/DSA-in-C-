@@ -13,7 +13,7 @@ pair<int,int> misrep1(vector<int> &a,int size){
     }
     return sol;
 }
-pair<int,int> misrep(vector<int> &a,int size){
+pair<int,int> misrep2(vector<int> &a,int size){
     pair<int,int> sol;
     int arr[size]={0};
     for(int i=0;i<size;i++){
@@ -27,6 +27,21 @@ pair<int,int> misrep(vector<int> &a,int size){
             sol.second=i;
         }
     }
+    return sol;
+}
+pair<int,int> misrep(vector<int> &a,int size){
+    pair<int,int> sol;
+    int val1=0,val2=0;
+    for(int i=0;i<size;i++){
+        val1+=a[i];
+        val2+=a[i]*a[i];
+    }
+    val1=val1-(size*(size+1))/2;
+    val2=val2-(size*(size+1)*(2*size+1))/6;
+
+    val2=val2/val1;
+    sol.first=(val1+val2)/2;
+    sol.second=(val2-val1)/2;
     return sol;
 }
 
