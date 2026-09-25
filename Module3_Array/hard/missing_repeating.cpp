@@ -20,7 +20,7 @@ pair<int,int> misrep2(vector<int> &a,int size){
     for(int i=0;i<size;i++){
         arr[a[i]]++;
     }
-    for(int i=0;i<size;i++){
+    for(int i=1;i<=size;i++){
         if(arr[i]==2){
             sol.first=i;
         }
