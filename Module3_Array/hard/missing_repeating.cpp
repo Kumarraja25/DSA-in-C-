@@ -13,6 +13,7 @@ pair<int,int> misrep1(vector<int> &a,int size){
     }
     return sol;
 }
+
 pair<int,int> misrep2(vector<int> &a,int size){
     pair<int,int> sol;
     int arr[size]={0};
@@ -29,7 +30,8 @@ pair<int,int> misrep2(vector<int> &a,int size){
     }
     return sol;
 }
-pair<int,int> misrep(vector<int> &a,int size){
+
+pair<int,int> misrep3(vector<int> &a,int size){
     pair<int,int> sol;
     int val1=0,val2=0;
     for(int i=0;i<size;i++){
@@ -43,6 +45,45 @@ pair<int,int> misrep(vector<int> &a,int size){
     sol.first=(val1+val2)/2;
     sol.second=(val2-val1)/2;
     return sol;
+}
+
+pair<int,int> misrep(vector<int> &a,int size){
+    int xr=0;
+    for(int i=0;i<size;i++){
+        xr=xr^a[i];
+        xr=xr^(i+1);
+    }
+    int bitno=0;
+    while(1){
+        if((xr & (1<<bitno))!=0){
+            break;
+        }
+        bitno++;
+    }
+    int zero=0;
+    int one=0;
+    for(int i=0;i<size;i++){
+        if((a[i] & (1<<bitno))==0){
+            zero=zero^a[i];
+        }
+        else{
+            one=one^a[i];
+        }
+    }
+    for(int i=1;i<=size;i++){
+        if((i & (1<<bitno))==0){
+            zero=zero^i;
+        }
+        else{
+            one=one^i;
+        }
+    }
+    int count=0;
+    for(int i=0;i<size;i++){
+        if(a[i]==zero) count++;
+    }
+    if(count==0) return {one,zero};
+    return {zero,one};
 }
 
 
