@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int maxprodSubarray(vector<int> &a){
+int maxprodSubarray1(vector<int> &a){
     int n=a.size();
     int maxprod=INT_MIN;
     for(int i=0;i<n;i++){
@@ -10,6 +10,18 @@ int maxprodSubarray(vector<int> &a){
             for(int k=i;k<=j;k++){
                 prod=prod*a[k];
             }
+            maxprod=max(maxprod,prod);
+        }
+    }
+    return maxprod;
+}
+int maxprodSubarray(vector<int> &a){
+    int n=a.size();
+    int maxprod=INT_MIN;
+    for(int i=0;i<n;i++){
+        int prod=1;
+        for(int j=i;j<n;j++){
+            prod=prod*a[j];
             maxprod=max(maxprod,prod);
         }
     }
